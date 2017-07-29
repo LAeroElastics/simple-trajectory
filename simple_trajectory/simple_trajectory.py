@@ -14,7 +14,7 @@ div_size = n+2 #ノード数+初期条件+終端条件
 #D = nd.deriv_mat(tau)
 tau, w, D = nd.make_node_derivative_matrix(n)
 
-#運動方程式
+#Dynamics of point mass
 def dynamics(u, v, x, y, beta):
     (_u, _v, _x, _y, _beta) \
         = (u[1:div_size-1], v[1:div_size-1], x[1:div_size-1], y[1:div_size-1], beta[1:div_size-1])
@@ -27,7 +27,7 @@ def dynamics(u, v, x, y, beta):
     dx = np.hstack((dx0, dx1, dx2, dx3))
     return dx
 
-#評価関数
+#Evaluation Func -> minimize
 class tfComp(Component):
     def __init__(self):
         super(tfComp,self).__init__()
@@ -39,7 +39,7 @@ class tfComp(Component):
         t = params['t']
         unknowns['tf'] = t
 
-#等式拘束条件
+#Equality conditions
 class eqComp(Component):
     def __init__(self):
         super(eqComp,self).__init__()
@@ -108,7 +108,7 @@ class eqComp(Component):
         unknowns['eq'] \
             = np.hstack((con1,con2,con3,con4,con5,con6,con7,con8,con9,con10,con11,con12))
 
-#不等式拘束条件
+#Inequality conditions
 class ineqComp(Component):
     def __init__(self):
         super(ineqComp,self).__init__()
