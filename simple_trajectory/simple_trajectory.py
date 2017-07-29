@@ -190,7 +190,7 @@ if __name__ == "__main__":
     top.driver.add_desvar('p1.u', lower=0.0)
     top.driver.add_desvar('p2.v', upper=1.0)
     top.driver.add_desvar('p3.x', lower=0.0, upper=1.0)
-    top.driver.add_desvar('p4.y', lower=0.0, upper=1.0)
+    top.driver.add_desvar('p4.y', lower=0.0, upper=2.0)
     top.driver.add_desvar('p5.beta', lower=-np.pi/2.0, upper=np.pi/2.0)
     top.driver.add_desvar('p6.tf', lower=2.0, upper=3.0)
 
