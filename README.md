@@ -7,3 +7,5 @@ http://qiita.com/ina111/items/fc7ae980c5568c0d0817
 http://vdol.mae.ufl.edu/JournalPublications/AIAA-20478.pdf   
 
 Solving Optimal Contorol Problem with OpenMDAO. 
+Continuous time problem is converted into optimization problem, solved using SQP method.   
+Simple dynamics model is implemented for simplification.   
