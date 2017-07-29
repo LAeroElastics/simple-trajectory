@@ -146,22 +146,26 @@ class ineqComp(Component):
         unknowns['ineq'] = np.hstack((con1,con2,con3))
 
 if __name__ == "__main__":
+    #Definition of the problem
+    
     #top = Problem()
     #root = top.root = Group()
     root = Group()
-
+    
+    #Add parameters and give them initial estimations
     root.add('p1',IndepVarComp('u',np.ones(div_size)*0.5))
     root.add('p2',IndepVarComp('v',np.ones(div_size)*0.5))
     root.add('p3',IndepVarComp('x',np.ones(div_size)*0.5))
     root.add('p4',IndepVarComp('y',np.ones(div_size)*0.5))
     root.add('p5',IndepVarComp('beta',np.ones(div_size)*0.5))
     root.add('p6',IndepVarComp('tf',2.3))
-
+    #Add constraint objects
     root.add('peq',eqComp())
     root.add('pineq',ineqComp())
-
+    
     root.add('obj', tfComp())
-
+    
+    #Connect independent vars to the constraints
     root.connect('p1.u','peq.u')
     root.connect('p2.v', 'peq.v')
     root.connect('p3.x', 'peq.x')
@@ -192,7 +196,7 @@ if __name__ == "__main__":
     top.driver.add_desvar('p3.x', lower=0.0, upper=1.0)
     top.driver.add_desvar('p4.y', lower=0.0, upper=2.0)
     top.driver.add_desvar('p5.beta', lower=-np.pi/2.0, upper=np.pi/2.0)
-    top.driver.add_desvar('p6.tf', lower=2.0, upper=3.0)
+    top.driver.add_desvar('p6.tf', lower=2.0, upper=3.0) #never forget
 
     top.driver.add_constraint('peq.eq',equals=np.zeros((div_size-2)*4+11))
     #top.driver.add_constraint('peq.con1',equals=np.zeros((div_size-2)*4))
