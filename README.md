@@ -6,16 +6,16 @@ OpenMDAOを利用して軌道最適化問題を解いてみました。連続時
   【論文】Direct Trajectory Optimization and Costate Estimation via an Orthogonal Collocation Method  
   http://vdol.mae.ufl.edu/JournalPublications/AIAA-20478.pdf   
 
-  Solving Optimal Contorol Problem with OpenMDAO. 
-  Converting continuous time optimal control problem into optimization problem,
-  solved using SQP method.
-  This example is trajectory optimization of flying object being dominated its 
-  motion by Gravity and with some initial conditions.
-  Really simple EoM is implemented to evaluate usage of OpenMDAO on this type of problem.
+  Solving Optimal Contorol Problem with OpenMDAO.   
+  Converting continuous time optimal control problem into optimization problem,  
+  solved using SQP method.  
+  This example is trajectory optimization of flying object being dominated its   
+  motion by Gravity and with some initial conditions.  
+  Really simple EoM is implemented to evaluate usage of OpenMDAO on this type of problem.  
 
-  default condition is as follows:
-  -Evaluation Function is arranged to minimizing time.
-  -State variables are velocity, position and path angle(NOT AOA).
-  -Can handle both equal and in-equal restraint condition.
+default condition is as follows:  
+-Evaluation Function is arranged to minimizing time.  
+  -State variables are velocity, position and path angle(NOT AOA).  
+  -Can handle both equal and in-equal restraint condition.  
 
-  These conditions are really easy to rearrange.
+  These conditions are really easy to rearrange.  
