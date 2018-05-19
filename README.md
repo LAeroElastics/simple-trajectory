@@ -7,5 +7,15 @@ http://qiita.com/ina111/items/fc7ae980c5568c0d0817
 http://vdol.mae.ufl.edu/JournalPublications/AIAA-20478.pdf   
 
 Solving Optimal Contorol Problem with OpenMDAO. 
-Continuous time problem is converted into optimization problem, solved using SQP method.   
-Simple dynamics model is implemented for simplification.   
+Converting continuous time optimal control problem into optimization problem,
+solved using SQP method.
+This example is trajectory optimization of flying object being dominated its 
+motion by Gravity and with some initial conditions.
+Really simple EoM is implemented to evaluate usage of OpenMDAO on this type of problem.
+
+default condition is as follows:
+-Evaluation Function is arranged to minimizing time.
+-State variables are velocity, position and path angle(NOT AOA).
+-Can handle both equal and in-equal restraint condition.
+
+These conditions are really easy to rearrange.
